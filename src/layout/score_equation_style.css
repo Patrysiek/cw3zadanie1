@@ -1,0 +1,10 @@
+.text-area{
+
+-fx-display-caret:false;
+-fx-font-size: 20;
+-fx-text-fill: #1e88e5;
+}
+.text-area *.text {
+    -fx-text-alignment: center;
+
+}

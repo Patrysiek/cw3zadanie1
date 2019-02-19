@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.4" minHeight="600.0"
+	minWidth="400.0" opacity="0.8" orientation="VERTICAL"
+	xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.MainViewController">
+	<items>
+		<AnchorPane minHeight="0.0" minWidth="0.0" stylesheets="layout/score_equation_style.css">
+			<children>
+				<TextArea fx:id="textEquation" prefHeight="121.0"
+					prefWidth="608.0" AnchorPane.leftAnchor="5.0"
+					AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" editable="false" wrapText="true"/>
+				<TextArea fx:id="textScore" layoutY="128.0"
+					prefHeight="102.0" prefWidth="608.0" AnchorPane.bottomAnchor="5.0"
+					AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
+					AnchorPane.topAnchor="128.0" editable="false" wrapText="true"/>
+
+			</children>
+		</AnchorPane>
+
+		<TabPane nodeOrientation="LEFT_TO_RIGHT"
+			stylesheets="@tabpane_style.css" tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab closable="false" text="Standardowy">
+					<content>
+
+						<fx:include fx:id="standardViewLayout"
+							source="StandardViewLayout.fxml" AnchorPane.bottomAnchor="5.0"
+							AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
+							AnchorPane.topAnchor="5.0" />
+					</content>
+				</Tab>
+				<Tab text="Programisty">
+					<content>
+						<fx:include fx:id="programmerViewLayout"
+							source="ProgrammerViewLayout.fxml" AnchorPane.bottomAnchor="5.0"
+							AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
+							AnchorPane.topAnchor="5.0" />
+					</content>
+				</Tab>
+			</tabs>
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+		</TabPane>
+
+	</items>
+</SplitPane>

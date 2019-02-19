@@ -1,0 +1,4 @@
+.tab-pane{
+-fx-open-tab-animation:grow;
+-fx-close-tab-animation:grow;
+}
