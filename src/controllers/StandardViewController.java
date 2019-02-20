@@ -1,9 +1,10 @@
 package controllers;
 
+import controllers.programmer.ProgrammerViewController;
 
 public class StandardViewController {
-	private MainViewController mainViewController;
-	public void injectMainController(MainViewController mainViewController) {
+	private ProgrammerViewController mainViewController;
+	public void injectMainController(ProgrammerViewController mainViewController) {
 		this.mainViewController = mainViewController;
 	}
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+
+<SplitPane maxHeight="1.7976931348623157E308"
+	maxWidth="1.7976931348623157E308" orientation="VERTICAL"
+	xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.programmer.ProgrammerViewController"
+	>
+
+	<items>
+		<fx:include fx:id="programmerResultLayout"
+			source="ProgrammerResultLayout.fxml" />
+		<fx:include fx:id="programmerKeyboardLayout"
+			source="ProgrammerKeyboardLayout.fxml" />
+	</items>
+
+</SplitPane>

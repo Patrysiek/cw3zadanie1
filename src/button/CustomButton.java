@@ -4,13 +4,26 @@ import javafx.scene.control.Button;
 
 public class CustomButton extends Button{
 	
-	private ButtonType type;
+	private NumberSystemType numberSystemType;
+	private ButtonType buttonType;
 	
-	public void setType(ButtonType type) {
-		this.type = type;
+	
+	
+	public CustomButton() {
+		numberSystemType = null;
+		buttonType = null;
 	}
-	public ButtonType getType() {
-		return type;
+	public void setNumberSystemType(NumberSystemType numberSystemType) {
+		this.numberSystemType = numberSystemType;
+	}
+	public NumberSystemType getNumberSystemType() {
+		return numberSystemType;
+	}
+	public ButtonType getButtonType() {
+		return buttonType;
+	}
+	public void setButtonType(ButtonType buttonType) {
+		this.buttonType = buttonType;
 	}
 
 }
