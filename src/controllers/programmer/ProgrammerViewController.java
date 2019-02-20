@@ -35,6 +35,8 @@ public class ProgrammerViewController {
 		case BACKSPACE:
 			programmerResultLayoutController.backspaceFromField(mode);
 			break;
+		case ZEROING:
+			programmerResultLayoutController.zeroingField(mode);
 		default:
 			break;
 		}

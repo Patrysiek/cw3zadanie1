@@ -73,6 +73,23 @@ public class ProgrammerResultController {
 			}
 		}
 	}
+	
+	public void zeroingField(NumberSystemType type) {
+		for (Node n : programmerResultLayout.getItems()) {
+			if (!n.getClass().getName().equals(AnchorPane.class.getName()))
+				continue;
+
+			for (Node x : ((AnchorPane) n).getChildren()) {
+				if (!x.getClass().getName().equals(CustomTextField.class.getName()))
+					continue;
+				CustomTextField ctf = ((CustomTextField) x);
+				if (!ctf.getNumberSystemType().equals(type))
+					continue;
+				
+				ctf.setText("");
+			}
+		}
+	}
 
 	public void calculateFromDec() {
 		String result = decResult.getText();
@@ -82,14 +99,16 @@ public class ProgrammerResultController {
 		binResult.setText(calculator.decToBin(Integer.parseInt(result)));
 		octResult.setText(calculator.decToOct(Integer.parseInt(result)));
 	}
+
 	public void calculateFromBin() {
 		String result = binResult.getText();
 		resetAllFields();
-		decResult.setText(calculator.binToHex(result));
+		decResult.setText(calculator.binToDec(result));
 		hexResult.setText(calculator.binToHex(result));
 		binResult.setText(result);
 		octResult.setText(calculator.binToOct(result));
 	}
+
 	public void calculateFromHex() {
 		String result = hexResult.getText();
 		resetAllFields();
@@ -98,6 +117,7 @@ public class ProgrammerResultController {
 		binResult.setText(calculator.hexToBin(result));
 		octResult.setText(calculator.hexToOct(result));
 	}
+
 	public void calculateFromOct() {
 		String result = octResult.getText();
 		resetAllFields();
@@ -106,8 +126,7 @@ public class ProgrammerResultController {
 		binResult.setText(calculator.octToBin(result));
 		octResult.setText(result);
 	}
-	
-	
-	
+
+
 
 }

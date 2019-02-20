@@ -3,23 +3,37 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.8" orientation="VERTICAL" prefHeight="121.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.5"
+	maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+	opacity="0.8" orientation="VERTICAL" prefHeight="121.0"
+	xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1" fx:id="standardResultLayout"
+	fx:controller="controllers.standard.StandardResultController">
 	<items>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <TextArea fx:id="textEquation1" editable="false" maxWidth="1.7976931348623157E308" prefHeight="121.0" prefWidth="483.0" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </TextArea>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-      				<TextArea fx:id="textScore" editable="false" maxWidth="1.7976931348623157E308" prefHeight="197.0" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
-         </children>
-      </AnchorPane>
+		<AnchorPane prefHeight="200.0" prefWidth="200.0">
+			<children>
+				<TextArea fx:id="textEquation1" editable="false"
+					maxWidth="1.7976931348623157E308" prefHeight="121.0"
+					prefWidth="483.0" wrapText="true" AnchorPane.bottomAnchor="5.0"
+					AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
+					AnchorPane.topAnchor="5.0">
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+				</TextArea>
+			</children>
+		</AnchorPane>
+		<AnchorPane prefHeight="200.0" prefWidth="200.0">
+			<children>
+				<TextField fx:id="inputVariable" editable="false"
+					maxWidth="1.7976931348623157E308" prefHeight="197.0"
+					 AnchorPane.bottomAnchor="5.0"
+					AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
+					AnchorPane.topAnchor="5.0" alignment="BASELINE_RIGHT" />
+			</children>
+		</AnchorPane>
 	</items>
 </SplitPane>
