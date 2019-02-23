@@ -2,6 +2,7 @@ package controllers.programmer;
 
 import button.NumberSystemType;
 import button.CustomButtonDisabler;
+
 import button.ButtonType;
 import button.CustomButton;
 import javafx.beans.value.ObservableValue;
@@ -11,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
+
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -20,7 +22,7 @@ public class ProgrammerKeyboardController {
 	private ProgrammerViewController programmerViewController;
 	private NumberSystemType mode;
 	private ToggleGroup switchModeButtons;
-	CustomButtonDisabler customButtonDisabler;
+	private CustomButtonDisabler customButtonDisabler;
 
 	@FXML
 	GridPane programmerKeyboardLayout;
@@ -35,7 +37,6 @@ public class ProgrammerKeyboardController {
 	private void initialize() {
 		switchModeButtons = new ToggleGroup();
 		customButtonDisabler = new CustomButtonDisabler();
-
 		initButtons(programmerKeyboardLayout);
 		initRadioButtons(radioButtonBox, switchModeButtons);
 
@@ -52,22 +53,22 @@ public class ProgrammerKeyboardController {
 
 			if (n.getClass().equals(CustomButton.class)) {
 				CustomButton button = (CustomButton) n;
-				if(!(button.getNumberSystemType()==null))
+				if (!(button.getNumberSystemType() == null))
 					button.setButtonType(ButtonType.NUMERIC);
-				
-				
-				button.setOnAction((ActionEvent event) -> buttonAction(button.getText(), mode,button.getButtonType()));
+
+				button.setOnAction((ActionEvent event) -> buttonAction(button.getText(), mode, button.getButtonType()));
+
 			}
 		}
 	}
 
-	private void buttonAction(String text, NumberSystemType mode,ButtonType type) {
+	private void buttonAction(String text, NumberSystemType mode, ButtonType type) {
 
 		if (mode == null || text == null || type == null)
 			return;
 
-		if(type.equals(ButtonType.NUMERIC))
-			programmerViewController.appendToField(text,mode);
+		if (type.equals(ButtonType.NUMERIC))
+			programmerViewController.appendToField(text, mode);
 		else
 			programmerViewController.setFunction(text, mode, type);
 	}
@@ -109,7 +110,8 @@ public class ProgrammerKeyboardController {
 			break;
 		case "OCT":
 			setMode(NumberSystemType.OCT);
-			customButtonDisabler.disableButtons(programmerKeyboardLayout, true, NumberSystemType.HEX, NumberSystemType.DEC);
+			customButtonDisabler.disableButtons(programmerKeyboardLayout, true, NumberSystemType.HEX,
+					NumberSystemType.DEC);
 			break;
 		case "HEX":
 			setMode(NumberSystemType.HEX);

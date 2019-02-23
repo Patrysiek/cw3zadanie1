@@ -10,21 +10,31 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
+	
+	
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			FXMLLoader loader = new FXMLLoader(Main.this.getClass().getResource("/layout/MainLayout.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/layout/MainLayout.fxml"));
 			Parent root = loader.load();
+			
+
+			
 			Scene scene = new Scene(root);
+
+			
 			primaryStage.setTitle("Calculator");
 			primaryStage.setMinWidth(350);
 			primaryStage.setMinHeight(600);
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	public static void main(String[] args) {
 		launch(args);

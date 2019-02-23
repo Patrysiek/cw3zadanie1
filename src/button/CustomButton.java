@@ -26,4 +26,5 @@ public class CustomButton extends Button{
 		this.buttonType = buttonType;
 	}
 
+
 }
