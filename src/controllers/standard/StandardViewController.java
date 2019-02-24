@@ -17,19 +17,19 @@ public class StandardViewController {
 		standardResultLayoutController.injectMainViewController(this);
 	}
 
-	public void chooseFunction(ButtonType buttonType, String text, String side) {
+	public void chooseFunction(ButtonType buttonType, String text, boolean side) {
 		standardResultLayoutController.setSide(side);
-		standardResultLayoutController.setFunction(buttonType, text, side);
+		standardResultLayoutController.setFunction(buttonType, text);
 	}
 
-	public void appendInputVariable(String text, String side) {
+	public void appendInputVariable(String text, boolean side) {
 
 		standardResultLayoutController.setSide(side);
 		standardResultLayoutController.appendText(text);
 	}
 
-	public void changeToggle(String string) {
-		standardKeyboardLayoutController.changeToggle(string);
+	public void changeToggle(boolean isRightSIde) {
+		standardKeyboardLayoutController.changeToggle(isRightSIde);
 	}
 
 }

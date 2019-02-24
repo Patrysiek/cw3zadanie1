@@ -19,21 +19,21 @@ public class StandardResultController {
 	private void initialize() {
 		calculator = new StandardCalculator();
 		var1.setOnMouseClicked((x) -> {
-			standardViewController.changeToggle("Left Side");
 			rightSide = false;
+			standardViewController.changeToggle(rightSide);
 		});
 		var2.setOnMouseClicked((x) -> {
-			standardViewController.changeToggle("Right Side");
 			rightSide = true;
+			standardViewController.changeToggle(rightSide);
 		});
 	}
 
-	public void setSide(String s) {
-		if (s.equals("Right Side")) {
-			rightSide = true;
+	public void setSide(boolean rightSide) {
+		if (rightSide) {
+			this.rightSide = true;
 		} else {
 
-			rightSide = false;
+			this.rightSide = false;
 		}
 
 	}
@@ -46,7 +46,7 @@ public class StandardResultController {
 		}
 	}
 
-	public void setFunction(ButtonType buttonType, String text, String string) {
+	public void setFunction(ButtonType buttonType, String text) {
 
 		
 		switch (buttonType) {

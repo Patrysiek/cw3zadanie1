@@ -8,9 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 public class StandardKeyboardController {
@@ -23,6 +21,7 @@ public class StandardKeyboardController {
 	@FXML
 	private RadioButton leftSide,rightSide;
 	private StandardViewController standardViewController;
+	private boolean isRightSide = false;
 
 	public void injectMainViewController(StandardViewController standardViewController) {
 		this.standardViewController = standardViewController;
@@ -38,7 +37,9 @@ public class StandardKeyboardController {
 
 	private void initToggleButtons() {
 		leftSide.setToggleGroup(toggleGroup);
+		leftSide.setOnMouseClicked((x)->changeToggle(false));
 		rightSide.setToggleGroup(toggleGroup);
+		rightSide.setOnMouseClicked((x)->changeToggle(true));
 		toggleGroup.selectToggle(leftSide);
 	}
 
@@ -60,18 +61,23 @@ public class StandardKeyboardController {
 	private void onButtonClick(ButtonType buttonType, String text) {
 
 		if (buttonType.equals(ButtonType.NUMERIC)) {			
-			standardViewController.appendInputVariable(text,((RadioButton)toggleGroup.getSelectedToggle()).getText());
+			standardViewController.appendInputVariable(text,isRightSide);
 		}else {
-			standardViewController.chooseFunction(buttonType, text,((RadioButton)toggleGroup.getSelectedToggle()).getText());
+			standardViewController.chooseFunction(buttonType, text,isRightSide);
 		}
 	}
 
-	public void changeToggle(String string) {
+	public void changeToggle(boolean isRightSide) {
 
-		if(string.equals(leftSide.getText()))
-			toggleGroup.selectToggle(leftSide);
-		else
+		if(isRightSide) {
 			toggleGroup.selectToggle(rightSide);
+			this.isRightSide = true;
+		}
+		else {
+			toggleGroup.selectToggle(leftSide);
+			this.isRightSide = false;
+		}
+			
 		
 	}
 
